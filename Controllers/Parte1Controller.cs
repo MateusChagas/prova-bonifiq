@@ -20,8 +20,7 @@ namespace ProvaPub.Controllers
 		[HttpGet]
 		public int Index()
 		{
-			Random rand = new Random();
-			int numero = rand.Next(1000);
+			int numero = _randomService.GetRandom();
 			return numero;			
 		}
 	}
