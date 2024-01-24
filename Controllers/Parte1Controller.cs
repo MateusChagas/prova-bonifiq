@@ -4,7 +4,7 @@ using ProvaPub.Services;
 namespace ProvaPub.Controllers
 {
 	/// <summary>
-	/// Ao rodar o código abaixo o serviço deveria sempre retornar um número diferente, mas ele fica retornando sempre o mesmo número.
+	/// Ao rodar o código abaixo o serviço deveria sempre retornar um número diferente, mas ele fica retornando sempre o mesmo número teste.
 	/// Faça as alterações para que o retorno seja sempre diferente
 	/// </summary>
 	[ApiController]
