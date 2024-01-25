@@ -13,9 +13,18 @@ namespace ProvaPub.Services
             _ctx = ctx;
         }
 
-        public CustomerList ListCustomers(int page)
-        {
-            return new CustomerList() { HasNext = false, TotalCount = 10, Customers = _ctx.Customers.ToList() };
+        public TotalList ListCustomers(int page)
+        {            
+
+            if (page == 1)
+            {
+                return new TotalList() { HasNext = false, TotalCount = 10, Customers = _ctx.Customers.Take(10).ToList() };
+
+            }
+            else
+            {
+                return new TotalList() { HasNext = false, TotalCount = _ctx.Customers.Count(), Customers = _ctx.Customers.Skip(10).Take(10).ToList() };
+            }
         }
 
         public async Task<bool> CanPurchase(int customerId, decimal purchaseValue)
