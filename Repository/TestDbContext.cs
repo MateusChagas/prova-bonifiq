@@ -45,7 +45,7 @@ namespace ProvaPub.Repository
 					Name = new Faker().Commerce.ProductName()
 				});
 			}
-			return result.ToArray();
+			return result.Take(10).ToArray();
 		}
 
 		public DbSet<Customer> Customers{ get; set; }
