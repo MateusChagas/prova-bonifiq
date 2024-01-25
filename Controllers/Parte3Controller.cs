@@ -3,6 +3,7 @@ using ProvaPub.Models;
 using ProvaPub.Repository;
 using ProvaPub.Services;
 
+
 namespace ProvaPub.Controllers
 {
 	
@@ -17,9 +18,11 @@ namespace ProvaPub.Controllers
 	public class Parte3Controller :  ControllerBase
 	{
 		[HttpGet("orders")]
-		public async Task<Order> PlaceOrder(string paymentMethod, decimal paymentValue, int customerId)
-		{
-			return await new OrderService().PayOrder(paymentMethod, paymentValue, customerId);
+		
+		public async Task<Order> PlaceOrder(EnumPayment EnumPayment, decimal paymentValue, int customerId)
+		{   	
+			 
+			return await new OrderService().PayOrder(EnumPayment,  paymentValue, customerId);
 		}
 	}
 }
